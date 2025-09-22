@@ -7,6 +7,7 @@ import Layout from "@/components/organisms/Layout";
 import Dashboard from "@/components/pages/Dashboard";
 import Contacts from "@/components/pages/Contacts";
 import Deals from "@/components/pages/Deals";
+import Companies from "@/components/pages/Companies";
 import Activities from "@/components/pages/Activities";
 import Reports from "@/components/pages/Reports";
 import Login from '@/components/pages/Login';
@@ -133,8 +134,9 @@ function AppContent() {
           <Route path="/*" element={
             <Layout>
               <Routes>
-                <Route path="/" element={<Dashboard />} />
+<Route path="/" element={<Dashboard />} />
                 <Route path="/contacts" element={<Contacts />} />
+                <Route path="/companies" element={<Companies />} />
                 <Route path="/deals" element={<Deals />} />
                 <Route path="/activities" element={<Activities />} />
                 <Route path="/reports" element={<Reports />} />
