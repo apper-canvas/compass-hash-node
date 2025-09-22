@@ -20,14 +20,31 @@ const Header = ({ onMenuClick, title = "Dashboard" }) => {
             {title}
           </h1>
         </div>
-        
-        <div className="flex items-center space-x-3">
+<div className="flex items-center space-x-3">
           <Button variant="ghost" size="sm" className="p-2">
             <ApperIcon name="Bell" size={20} />
           </Button>
           
           <Button variant="ghost" size="sm" className="p-2">
             <ApperIcon name="Settings" size={20} />
+          </Button>
+          
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="p-2"
+            onClick={async () => {
+              try {
+                const { ApperUI } = window.ApperSDK;
+                await ApperUI.logout();
+                window.location.href = '/login';
+              } catch (error) {
+                console.error("Logout failed:", error);
+              }
+            }}
+            title="Logout"
+          >
+            <ApperIcon name="LogOut" size={20} />
           </Button>
           
           <div className="w-8 h-8 bg-gradient-to-r from-primary to-blue-700 rounded-full flex items-center justify-center">
